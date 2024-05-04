@@ -34,8 +34,8 @@
           </li>
         </ul>
         <form class="d-flex">
-          <router-link v-if="!authStore.user" :to="{ name: 'login' }" class="btn btn-outline-success m-1">Iniciar Sesión</router-link>
           <router-link v-if="!authStore.user" :to="{ name: 'register' }" class="btn btn-outline-success m-1">Registrarse</router-link>
+          <router-link v-if="!authStore.user" :to="{ name: 'login' }" class="btn btn-outline-success m-1">Iniciar Sesión</router-link>
           <button v-if="authStore.user" type="button" class="btn btn-outline-success m-1">
             <span class="text-white">{{ authStore.user.full_name }}</span>
             
