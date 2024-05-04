@@ -14,7 +14,6 @@ onMounted(() => {
 })
 const carts = ref([])
 const cashOrder = async () => {
-  // eslint-disable-next-line no-unused-vars
   let res
   axios.get('http://localhost:8000/api/cash_order').then((response) => {
     ;(res = response.data.status),
@@ -34,9 +33,6 @@ const getCarts = async () => {
 const deleteCart = (id, name) => {
   confirmation(name, 'http://localhost:8000/api/remove_cart/' + id, '/cart')
 }
-/*const stripe = async () => {
-  await axios.get('http://localhost:8000/api/stripe', totalprice)
-}*/
 </script>
 
 <template>
@@ -75,14 +71,9 @@ const deleteCart = (id, name) => {
           </tbody>
         </table>
         <h2 class="text-center">Total price : ${{ totalprice }}</h2>
-        <button style="margin-right: 6px" type="button" class="btn btn-primary" @click="cashOrder">
-         Cancelar
+        <button style="margin-left: 6px" type="button" class="btn btn-primary" @click="stripe">
+          Pagar
         </button>
-        <RouterLink :to="{ name: 'stripe' }">
-          <button style="margin-left: 6px" type="button" class="btn btn-primary" @click="stripe">
-            Pagar con tarjeta
-          </button></RouterLink
-        >
       </div>
     </div>
   </div>

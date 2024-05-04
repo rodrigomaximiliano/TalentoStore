@@ -19,6 +19,15 @@
     </div>
     <div class="col-md-4">
       <div class="box">
+        <img src="../assets/img/calidad.png" alt="concepto" width="140" height="120">
+        <div class="detail-box">
+          <h5>Mejor calidad</h5>
+          <p>Garantizamos la mejor calidad de nuestros productos, asegurando lo mejor para nuestros clientes.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="box">
         <img src="../assets/img/free.png" alt="concepto" width="140" height="120">
         <div class="detail-box">
           <h5>Envío gratis</h5>
@@ -26,15 +35,6 @@
             El envío es totalmente gratis en caso de que el lugar de destino sea dentro de la
             provincia.
           </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="box">
-        <img src="../assets/img/calidad.png" alt="concepto" width="140" height="120">
-        <div class="detail-box">
-          <h5>Mejor calidad</h5>
-          <p>Nuestros productos son en su totalidad importados y nuevos, garatizamos su calidad.</p>
         </div>
       </div>
     </div>
