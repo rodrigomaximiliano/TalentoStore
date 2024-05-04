@@ -2,8 +2,6 @@
   <section>
     <div id="local">
       <div class="divider"></div>
-
-    
       <div class="local-contents">
         <div class="wrapper">
           <div class="highlight-text">
@@ -74,6 +72,7 @@ const contents = [
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color:whitesmoke;
 }
 
 .local-contents {
@@ -106,17 +105,7 @@ const contents = [
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transform: translateY(0);
-  transition: transform 0.5s ease-in-out;
-}
 
-.highlight-text.animate {
-  animation: highlight 2s ease-in-out infinite alternate;
-}
-
-@keyframes highlight {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(10px); }
 }
 
 .highlight-text h1 {

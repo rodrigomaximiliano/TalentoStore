@@ -1,6 +1,5 @@
 <script setup>
 import NavBar from '@/components/NavBar.vue'
-import FooterSection from '@/components/FooterSection.vue'
 import axios from 'axios'
 import { ref, onMounted } from 'vue'
 import { useAuthStore } from '../stores/auth'
@@ -92,5 +91,4 @@ const addCart = async (event) => {
       </div>
     </div>
   </div>
-  <FooterSection />
 </template>

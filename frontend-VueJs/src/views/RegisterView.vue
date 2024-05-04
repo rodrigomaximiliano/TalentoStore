@@ -20,7 +20,7 @@ const form = ref({
           <div class="card-body p-4 p-lg-5 text-black">
             <div class="d-flex align-items-center mb-3 pb-1">
               <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219"></i>
-              <span class="h1 fw-bold mb-0">TalentoStore</span>
+              <span class="h1 fw-bold mb-0">Registro</span>
             </div>
             <form @submit.prevent="$event => authStore.register(form)">
               <div class="form-outline mb-2">
@@ -79,7 +79,7 @@ const form = ref({
 
               <div class="pt-1 mb-2">
                 <button class="btn btn-dark btn-lg btn-block">
-                  Registrarse
+                 Crear cuenta
                 </button>
                 <p style="color: red;">{{feedback}}</p>
               </div>

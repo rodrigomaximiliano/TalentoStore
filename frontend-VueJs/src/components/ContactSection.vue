@@ -1,7 +1,7 @@
 <template>
   <section>
     <div id="contact" class="contact-section">
-      <div class="container mb-md-6 pt-5">
+      <div class="container mb-md-1 pt-2">
         <div class="row justify-content-md-center">
           <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 text-center">
             <h2 class="w-50 mx-auto text-center pt-3 contact-text">Contáctanos</h2>
@@ -9,19 +9,19 @@
           </div>
         </div>
       </div>
-      <div class="container pb-3">
-        <div class="row justify-content-lg-center align-items-center">
-          <div class="col-12 col-lg-4">
+      <div class="container pb-2">
+        <div class="row justify-content-center align-items-center"> 
+          <div class="col-12 col-lg-4"> 
             <img src="../assets/img/contact.png" alt="Descripción de la imagen" class="img-fluid">
           </div>
-          <div class="col-12 col-lg-6">
+          <div class="col-12 col-lg-6"> 
             <div class="bg-white border rounded shadow-sm overflow-hidden p-4">
               <form action="#!">
-                <div class="mb-3">
+                <div class="mb-2">
                   <label for="fullname" class="form-label">Nombre completo <span class="text-danger">*</span></label>
                   <input type="text" class="form-control" id="fullname" value="" required>
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                   <label for="email" class="form-label">Correo electrónico <span class="text-danger">*</span></label>
                   <div class="input-group">
                     <span class="input-group-text">
@@ -30,7 +30,7 @@
                     <input type="email" class="form-control" id="email" value="" required>
                   </div>
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                   <label for="phone" class="form-label">Número de teléfono</label>
                   <div class="input-group">
                     <span class="input-group-text">
@@ -39,7 +39,7 @@
                     <input type="tel" class="form-control" id="phone" value="">
                   </div>
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                   <label for="message" class="form-label">Mensaje <span class="text-danger">*</span></label>
                   <textarea class="form-control" id="message" rows="3" required></textarea>
                 </div>
@@ -81,13 +81,13 @@ const authStore = useAuthStore()
 
 <style scoped>
 .contact-section {
-  background: white;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  background: whitesmoke;
+  padding-top: 0px;
+  padding-bottom: 10px;
 }
 
 .contact-text {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .bg-custom-green {
@@ -108,6 +108,6 @@ const authStore = useAuthStore()
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 </style>

@@ -85,6 +85,6 @@ const authStore = useAuthStore()
 .logo {
   max-width:70px;
   max-height: 70px; 
-  margin-left: 10px; 
+  margin-left: 20px; 
 }
 </style>
