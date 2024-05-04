@@ -1,12 +1,10 @@
 <template>
   <section>
     <div id="local">
-      <!-- Divisor -->
       <div class="divider"></div>
 
-      <!-- Tus contenidos actuales -->
+    
       <div class="local-contents">
-        <!-- Contenido 1 -->
         <div class="wrapper">
           <div class="highlight-text">
             <p class="promo">
@@ -15,7 +13,6 @@
             <a href="products" class="btn btn-primary">Ver productos</a>
           </div>
         </div>
-        <!-- Contenido 2 -->
         <div class="wrapper">
           <div class="highlight-text">
             <p class="promo">
@@ -24,7 +21,6 @@
             <a href="promotions" class="btn btn-primary">Ver promociones</a>
           </div>
         </div>
-        <!-- Contenido 3 -->
         <div class="wrapper">
           <div class="highlight-text">
             <p class="promo">
@@ -41,8 +37,6 @@
 <script setup>
 import { useAuthStore } from '../stores/auth'
 const authStore = useAuthStore()
-
-// Código relacionado con las marcas ha sido eliminado
 
 const contents = [
   {
@@ -65,16 +59,14 @@ const contents = [
   }
 ]
 
-// Funciones relacionadas con las animaciones han sido conservadas
+
 </script>
 
 <style scoped>
-/* Estilos para el divisor */
 .divider {
-  height: 20px; /* Ajusta la altura del divisor según sea necesario */
+  height: 20px; 
 }
 
-/* Estilos para tus contenidos actuales */
 #local {
   padding-bottom: 30px;
   padding-top: 30px;

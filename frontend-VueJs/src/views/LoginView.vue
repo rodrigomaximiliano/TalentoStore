@@ -63,18 +63,16 @@
 import { ref } from 'vue'
 import { useAuthStore } from '../stores/auth'
 
-// Acceso al store de autenticación
+
 const authStore = useAuthStore()
 
-// Definir datos del formulario como referencia
+
 const form = ref({
   email: '',
   password: ''
 })
 
-// Manejar el envío del formulario
 const handleSubmit = () => {
-  // Llamar a la función de inicio de sesión del store de autenticación
   authStore.login(form.value)
 }
 </script>

@@ -1,6 +1,5 @@
 <template>
   <section>
-    <!-- Contenido principal -->
     <div id="contact" class="contact-section">
       <div class="container mb-md-6 pt-5">
         <div class="row justify-content-md-center">
@@ -13,11 +12,9 @@
       <div class="container pb-3">
         <div class="row justify-content-lg-center align-items-center">
           <div class="col-12 col-lg-4">
-            <!-- Aquí está la imagen -->
             <img src="../assets/img/contact.png" alt="Descripción de la imagen" class="img-fluid">
           </div>
           <div class="col-12 col-lg-6">
-            <!-- Aquí está el formulario -->
             <div class="bg-white border rounded shadow-sm overflow-hidden p-4">
               <form action="#!">
                 <div class="mb-3">
@@ -55,8 +52,6 @@
         </div>
       </div>
     </div>
-    
-    <!-- Sección para los logos de los socios -->
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-12 text-center">
@@ -73,7 +68,6 @@
         </div>
       </div>
     </div>
-
     <div class="spacer"></div>
     <footer>
     </footer>
@@ -93,7 +87,7 @@ const authStore = useAuthStore()
 }
 
 .contact-text {
-  margin-bottom: 20px; /* Ajusta este valor según sea necesario */
+  margin-bottom: 20px;
 }
 
 .bg-custom-green {
