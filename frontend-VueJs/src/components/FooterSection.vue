@@ -22,9 +22,11 @@
 
       <div class="footer-section footer-right">
         <h3 class="footer-heading">Contáctanos</h3>
-        <p class="footer-text">info@tiendatalento.com</p>
-        <p class="footer-text">3794456-7890</p>
-        <p class="footer-text">Corrientes Capital, Argentina</p>
+        <ul class="contact-info">
+          <li><span class="footer-text">Email:</span> info@tiendatalento.com</li>
+          <li><span class="footer-text">Teléfono:</span> 3794456-7890</li>
+          <li><span class="footer-text">Dirección:</span> Corrientes Capital, Argentina</li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
@@ -37,13 +39,13 @@
 .footer {
   background-color: #303131;
   color: white;
-  padding: 5px 5px; 
-  margin-top: 5px; 
+  padding: 20px 10px; 
   text-align: center;
 }
 
 .footer-content {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
@@ -53,26 +55,14 @@
   flex: 1;
 }
 
-.footer-left {
-  text-align: left; 
-}
-
-.footer-center {
-  text-align: center; 
-}
-
-.footer-right {
-  text-align: right; 
-}
-
 .footer-heading {
   font-size: 16px;
-  margin-bottom: 5px; 
+  margin-bottom: 10px; 
 }
 
 .footer-text {
   font-size: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .footer-links {
@@ -81,7 +71,7 @@
 }
 
 .footer-links li {
-  margin-bottom: 2px; 
+  margin-bottom: 5px; 
 }
 
 .footer-links a {
@@ -96,11 +86,11 @@
 .social-icons {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 .social-icon {
-  margin-right: 6px; 
+  margin: 0 6px; 
   color: white;
 }
 
@@ -108,7 +98,19 @@
   transform: scale(1.1);
 }
 
+.contact-info {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
 .footer-bottom {
   margin-top: 10px; 
-  font-size: 10px; }
+  font-size: 10px; 
+}
 </style>

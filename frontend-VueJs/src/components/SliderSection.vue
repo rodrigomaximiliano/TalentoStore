@@ -15,12 +15,22 @@
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="3000">
+      <img src="../assets/img/asus.jpg" class="d-block w-100" alt="slide3"style="height: 300px;">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="3000">
+      <img src="../assets/img/final.png" class="d-block w-100" alt="slide3"style="height: 300px;">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="3000">
       <img src="../assets/img/example2.jpg" class="d-block w-100" alt="slide3"style="height: 300px;">
       <div class="carousel-caption d-none d-md-block">
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="3000">
-      <img src="../assets/img/example3.jpg" class="d-block w-100" alt="slide3"style="height: 300px;">
+      <img src="../assets/img/example3.png" class="d-block w-100" alt="slide3"style="height: 300px;">
       <div class="carousel-caption d-none d-md-block">
       </div>
     </div>

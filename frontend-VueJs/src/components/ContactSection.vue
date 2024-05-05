@@ -1,21 +1,21 @@
 <template>
   <section>
     <div id="contact" class="contact-section">
-      <div class="container">
+      <div class="container"> 
         <div class="row justify-content-center align-items-center">
           <div class="col-12 col-lg-4 mb-4 mb-lg-0">
             <img src="../assets/img/contact.png" alt="Imagen de contacto" class="img-fluid">
           </div>
           <div class="col-12 col-lg-6">
-            <div class="bg-white border rounded shadow-sm p-4">
+            <div class="bg-white border rounded shadow-sm p-3">
               <h2 class="text-center mb-3 contact-text">Contáctanos</h2>
               <p class="text-center mb-3 contact-text">Estamos aquí para ayudarte con lo que necesites.</p>
               <form action="#">
-                <div class="mb-3">
+                <div class="mb-2">
                   <label for="fullname" class="form-label">Nombre completo <span class="text-danger">*</span></label>
                   <input type="text" class="form-control" id="fullname" value="" required>
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                   <label for="email" class="form-label">Correo electrónico <span class="text-danger">*</span></label>
                   <div class="input-group">
                     <span class="input-group-text">
@@ -24,7 +24,7 @@
                     <input type="email" class="form-control" id="email" value="" required>
                   </div>
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                   <label for="phone" class="form-label">Número de teléfono</label>
                   <div class="input-group">
                     <span class="input-group-text">
@@ -33,12 +33,12 @@
                     <input type="tel" class="form-control" id="phone" value="">
                   </div>
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                   <label for="message" class="form-label">Mensaje <span class="text-danger">*</span></label>
                   <textarea class="form-control" id="message" rows="3" required></textarea>
                 </div>
-                <div class="d-grid">
-                  <button class="btn btn-primary btn-lg bg-custom-green" type="submit">Enviar</button>
+                <div class="d-grid mt-3">
+                  <button class="btn btn-primary bg-custom-green" type="submit">Enviar</button>
                 </div>
               </form>
             </div>
@@ -76,13 +76,14 @@ const authStore = useAuthStore()
 <style scoped>
 .contact-section {
   background: #f0f0f0;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 }
 .form-control {
-  margin-bottom: 1px;
+  margin-bottom: 8px;
+  padding: 6px 10px;
 }
 .contact-text {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .bg-custom-green {
@@ -94,15 +95,15 @@ const authStore = useAuthStore()
 }
 
 .logo {
-  max-width: 150px;
-  max-height: 100px;
-  margin: 10px;
+  max-width: 100px;
+  max-height: 75px;
+  margin: 5px;
 }
 
 .logo-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 </style>
