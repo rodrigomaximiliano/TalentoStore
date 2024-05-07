@@ -29,6 +29,9 @@
         </div>
       </div>
     </div>
+    <div class="banner-container">
+  <img src="..\assets\img\bannerMsi.jpg" alt="Banner">
+</div>
   </section>
 </template>
 
@@ -139,4 +142,21 @@ const contents = [
   font-size: 1.1rem;
   margin-top: 30px;
 }
+.banner-container {
+  width: 100%; 
+  max-width: 80%; 
+  overflow: hidden;
+  position: relative;
+  margin-top: 10px; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+.banner-container img {
+  width: 100%; 
+  height: auto; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
 </style>

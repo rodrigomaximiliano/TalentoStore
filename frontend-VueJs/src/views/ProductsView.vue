@@ -38,7 +38,7 @@ const addCart = async (event) => {
       v-for="product in products"
       :key="product.id"
     >
-      <img src="..." class="card-img-top" />
+    <img src=".." class="card-img-top" />
       <div class="card-body">
         <h5 class="card-title">{{ product.name }}</h5>
         <p class="card-text">{{ product.description }}</p>

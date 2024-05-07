@@ -7,12 +7,11 @@
   <div class="row mx-3 text-center pt-2 pb-5">
     <div class="col-md-4">
       <div class="box">
-        <img src="../assets/img/fast.png" alt="concepto" width="140" height="120">
+        <img src="../assets/img/fast.png" alt="concepto" width="160" height="140">
         <div class="detail-box">
-          <h5>Entrega rápida</h5>
+          <h5>Aceptamos todos los medios de pago</h5>
           <p>
-            Establecemos un límite de tiempo de 3 días para la entrega, en caso contrario se
-            aplicara un descuento del 10%.
+            Es nuestro compromiso brindarte la mejor experiencia de compra. Por eso, ofrecemos una amplia variedad de métodos de pago.
           </p>
         </div>
       </div>

@@ -18,6 +18,11 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
+            <router-link :to="{ name: 'home' }" class="nav-link">
+              Inicio
+            </router-link>
+          </li>
+          <li class="nav-item">
             <router-link :to="{ name: 'products' }" class="nav-link">
               Productos
             </router-link>
@@ -38,7 +43,6 @@
           <router-link v-if="!authStore.user" :to="{ name: 'login' }" class="btn btn-outline-success m-1">Iniciar Sesión</router-link>
           <button v-if="authStore.user" type="button" class="btn btn-outline-success m-1">
             <span class="text-white">{{ authStore.user.full_name }}</span>
-            
             <v-icon name="co-account-logout" inverse="true" scale="1.3" fill="red" @click="authStore.logout()" />
           </button>
         </form>
@@ -82,8 +86,9 @@ const authStore = useAuthStore()
   background-color: #18c0cc;
   border-color: #fcfcfc;
 }
+
 .logo {
-  max-width:70px;
+  max-width: 70px;
   max-height: 70px; 
   margin-left: 20px; 
 }

@@ -19,6 +19,8 @@ class ProductSeeder extends Seeder
             'price' => 150,
             'category' => "Telefono",
             'quantity' => 21,
+            'image' => 'imagen/xiaomi.jpeg',
+
         ]);
         DB::table('products')->insert([
             'name' => "Samsung Galaxy S20",
@@ -56,12 +58,5 @@ class ProductSeeder extends Seeder
             'quantity' => 21,
         ]);
 
-
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }

@@ -26,7 +26,7 @@ class ProductController extends Controller
         $rules = [
             'name' => 'required|string|max:60',
             'description' => 'required|string|max:150',
-            'image'=>'string',
+            'image'=>'string', 
             'category'=>'required|string|max:150',
             'price' => 'required|numeric',
             'quantity'=>'required|numeric',

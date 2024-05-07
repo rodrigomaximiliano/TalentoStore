@@ -11,33 +11,33 @@
               <h2 class="text-center mb-3 contact-text">Contáctanos</h2>
               <p class="text-center mb-3 contact-text">Estamos aquí para ayudarte con lo que necesites.</p>
               <form action="#">
-                <div class="mb-2">
+                <div class="mb-3">
                   <label for="fullname" class="form-label">Nombre completo <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="fullname" value="" required>
+                  <input type="text" class="form-control" id="fullname" required>
                 </div>
-                <div class="mb-2">
+                <div class="mb-3">
                   <label for="email" class="form-label">Correo electrónico <span class="text-danger">*</span></label>
                   <div class="input-group">
                     <span class="input-group-text">
                       <v-icon name="md-email" inverse="true" fill="black"></v-icon>
                     </span>
-                    <input type="email" class="form-control" id="email" value="" required>
+                    <input type="email" class="form-control" id="email" required>
                   </div>
                 </div>
-                <div class="mb-2">
+                <div class="mb-3">
                   <label for="phone" class="form-label">Número de teléfono</label>
                   <div class="input-group">
                     <span class="input-group-text">
                       <v-icon name="bi-telephone-fill" inverse="true" fill="black"></v-icon>
                     </span>
-                    <input type="tel" class="form-control" id="phone" value="">
+                    <input type="tel" class="form-control" id="phone">
                   </div>
                 </div>
-                <div class="mb-2">
+                <div class="mb-3">
                   <label for="message" class="form-label">Mensaje <span class="text-danger">*</span></label>
                   <textarea class="form-control" id="message" rows="3" required></textarea>
                 </div>
-                <div class="d-grid mt-3">
+                <div class="d-grid">
                   <button class="btn btn-primary bg-custom-green" type="submit">Enviar</button>
                 </div>
               </form>
@@ -78,12 +78,13 @@ const authStore = useAuthStore()
   background: #f0f0f0;
   padding-bottom: 5px;
 }
+
 .form-control {
-  margin-bottom: 8px;
-  padding: 6px 10px;
+  padding: 8px 12px; /* Ajustar el espacio dentro de los campos de entrada */
 }
+
 .contact-text {
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* Aumentar el espacio entre los elementos de texto */
 }
 
 .bg-custom-green {
@@ -104,6 +105,6 @@ const authStore = useAuthStore()
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* Aumentar el espacio entre los logos */
 }
 </style>
