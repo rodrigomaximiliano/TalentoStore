@@ -32,5 +32,4 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/show_order', [OrderController::class, 'show_order']);
     Route::get('/cash_order', [OrderController::class, 'cash_order']);
     Route::get('/cancel_order/{id}', [OrderController::class, 'cancel_order']);
-    Route::post('stripe/{totalprice}', [CartController::class, 'stripePost'])->name('stripe.post');
 });

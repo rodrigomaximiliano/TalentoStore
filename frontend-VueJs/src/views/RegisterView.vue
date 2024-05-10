@@ -62,7 +62,7 @@
                     <div class="mb-4">
                       <input
                         type="password"
-                        v-model="form.confirm_password"
+                        v-model="form.password_confirmation"
                         class="form-control form-control-lg"
                         placeholder="Confirmar contraseña"
                       />
@@ -98,7 +98,7 @@ const form = ref({
   phone: '',
   address: '',
   password: '',
-  confirm_password: ''
+  password_confirmation: ''
 })
 
 const handleSubmit = async () => {
