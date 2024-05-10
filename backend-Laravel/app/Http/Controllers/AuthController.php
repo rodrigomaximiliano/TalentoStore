@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeMail;
 
 class AuthController extends Controller
 {
@@ -19,7 +21,7 @@ class AuthController extends Controller
             'address' => 'required|string|max:150',
             'password' => 'required|confirmed|string|min:8',
         ];
-        $validator = Validator::make($request->input(), $rules);
+        $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
             return response()->json([
                 'status' => false,
@@ -33,6 +35,13 @@ class AuthController extends Controller
             'address' => $request->address,
             'password' => Hash::make($request->password)
         ]);
+
+        // Enviar correo de bienvenida
+        Mail::to($user->email)->send(new WelcomeMail($user->full_name, '¡Bienvenido a nuestra tienda!'));
+
+        Auth::login($user);
+
+        // Devolver la respuesta JSON
         return response()->json([
             'status' => true,
             'message' => 'Usuario creado satisfactoriamente',
@@ -40,14 +49,13 @@ class AuthController extends Controller
         ], 200);
     }
 
-
     public function login(Request $request)
     {
         $rules = [
             'email' => 'required|string|email|max:100',
             'password' => 'required|string'
         ];
-        $validator = Validator::make($request->input(), $rules);
+        $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
             return response()->json([
                 'status' => false,
@@ -68,6 +76,7 @@ class AuthController extends Controller
             'token' => $user->createToken('API TOKEN')->plainTextToken
         ], 200);
     }
+
     public function logout()
     {
         auth()->user()->tokens()->delete();

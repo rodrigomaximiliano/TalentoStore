@@ -50,9 +50,14 @@ export const useAuthStore = defineStore('auth', {
     },
     async logout() {
       await axios
-        .get('http://localhost:8000/api/auth/logout', this.authToken)
-        .then((this.authToken = null), (this.authUser = null), router.push({ name: 'home' }))
+        .get('http://localhost:8000/api/auth/logout') // Token no es necesario aquí
+        .then(() => {
+          this.authToken = null
+          this.authUser = null
+          router.push({ name: 'home' })
+        })
     }
   },
   persist: true
 })
+

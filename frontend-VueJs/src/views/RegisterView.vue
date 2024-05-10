@@ -98,7 +98,7 @@ const form = ref({
   phone: '',
   address: '',
   password: '',
-  password_confirmation: ''
+ password_confirmation: '',
 })
 
 const handleSubmit = async () => {
