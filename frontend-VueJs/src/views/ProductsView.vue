@@ -4,19 +4,25 @@ import axios from 'axios'
 import { ref, onMounted } from 'vue'
 import { useAuthStore } from '../stores/auth'
 import { sendRequest } from '@/functions'
+
 const form = ref({ quantity:'1'});
 const productId = ref()
 const authStore = useAuthStore()
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + authStore.authToken
+
 onMounted(() => {
   getProducts()
 })
+
 const products = ref([])
 
 const getProducts = async () => {
   await axios
     .get('http://localhost:8000/api/products')
-    .then((response) => (products.value = response.data))
+    .then((response) => {
+      products.value = response.data;
+      console.log('Products from API:', response.data); // Log products from API response
+    })
 }
 
 const obtainId = async (id) => {
@@ -27,6 +33,26 @@ const addCart = async (event) => {
   event.preventDefault();
   sendRequest('POST', form.value, 'http://localhost:8000/api/add_cart/' + productId.value)
 }
+
+const getImageUrl = (productName, imageUrl) => {
+  if (imageUrl) {
+    // Si la URL de la imagen está disponible en la respuesta de la API, la utilizamos
+    return imageUrl;
+  } else {
+    // Si la URL de la imagen es null, proporcionamos una URL predeterminada o lógica alternativa
+    switch (productName) {
+      case 'Xiaomi':
+        return '../../public/imagen/xiaomi.jpeg';
+      case 'Samsung Galaxy S20':
+        return '../../public/imagen/samsung.jpg'; // Ajusta la URL de la imagen de Samsung si es diferente
+      case 'Iphone 13':
+        return '../../public/imagen/iphone13.jpg';
+      default:
+        return '';
+    }
+  }
+}
+
 </script>
 
 <template>
@@ -38,7 +64,7 @@ const addCart = async (event) => {
       v-for="product in products"
       :key="product.id"
     >
-    <img src=".." class="card-img-top" />
+      <img :src="getImageUrl(product.name)" class="card-img-top" />
       <div class="card-body">
         <h5 class="card-title">{{ product.name }}</h5>
         <p class="card-text">{{ product.description }}</p>
@@ -78,17 +104,18 @@ const addCart = async (event) => {
           ></button>
         </div>
         <form @submit.prevent="addCart">
-        <div class="modal-body mx-auto">
-          <input type="number" v-model="form.quantity" min="1" style="width: 100px" />
-        </div>
-        <div class="modal-footer mx-auto">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary" @click="addCart" data-bs-dismiss="modal">
-            Añadir al carrito
-          </button>
-        </div>
-      </form>
+          <div class="modal-body mx-auto">
+            <input type="number" v-model="form.quantity" min="1" style="width: 100px" />
+          </div>
+          <div class="modal-footer mx-auto">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" @click="addCart" data-bs-dismiss="modal">
+              Añadir al carrito
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </template>
+
