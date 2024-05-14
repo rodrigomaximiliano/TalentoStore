@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #303131;">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(to left, #000000, #ff1493);">
     <div class="container-fluid">
       <router-link :to="{ name: 'home' }" >
         <img src="../assets/img/a.png" alt="TalentoStore Icon" class="logo">
@@ -92,4 +92,18 @@ const authStore = useAuthStore()
   max-height: 70px; 
   margin-left: 20px; 
 }
+
+.logo:hover {
+    animation: tilt-n-move-shaking 0.25s infinite;
+}
+
+@keyframes tilt-n-move-shaking {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5px, 5px) rotate(5deg); }
+    50% { transform: translate(0, 0) rotate(0deg); }
+    75% { transform: translate(-5px, 5px) rotate(-5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+
 </style>
