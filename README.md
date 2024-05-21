@@ -2,14 +2,18 @@
 
 TalentoStore es una aplicación de una tienda web de insumos de computación, desarrollada como proyecto final del curso de Talentos Digitales.
 
+![Captura de pantalla 2024-05-21 172048](https://github.com/rodrigomaximiliano/TalentoStore/assets/116413011/ad262cf6-865c-4740-bfdd-c46c70c5aeae)
+
+
 La aplicación permite a los usuarios registrarse, iniciar sesión, ver los productos disponibles, añadir productos al carrito de compras, proceder al pago utilizando una pasarela de pago de testeo y ver los pedidos realizados. Además, la aplicación envía un correo electrónico de bienvenida cuando un nuevo usuario se registra y también cuando se realiza una compra con éxito.
+
 Requisitos
 
     PHP = 8.1
     Laravel = 10
     Node.js = v18.18.0
     Bootstrap = v5.3
-    "Vue": "^3.3.11"
+    Vue: "^3.3.11"
 # Instalación
 
 # Backend
