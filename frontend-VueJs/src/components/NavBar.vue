@@ -1,7 +1,7 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(to left, #000000, #ff1493);">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <router-link :to="{ name: 'home' }" >
+      <router-link :to="{ name: 'home' }" class="navbar-brand">
         <img src="../assets/img/a.png" alt="TalentoStore Icon" class="logo">
       </router-link>
       <button
@@ -15,35 +15,39 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-        <ul class="navbar-nav">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <router-link :to="{ name: 'home' }" class="nav-link">
-              Inicio
+              <i class="fas fa-home me-1"></i> Inicio
             </router-link>
           </li>
           <li class="nav-item">
             <router-link :to="{ name: 'products' }" class="nav-link">
-              Productos
+              <i class="fas fa-box me-1"></i> Productos
             </router-link>
           </li>
           <li class="nav-item">
             <router-link :to="{ name: 'cart' }" class="nav-link">
-              Carrito
+              <i class="fas fa-shopping-cart me-1"></i> Carrito
             </router-link>
           </li>
           <li class="nav-item">
             <router-link :to="{ name: 'order' }" class="nav-link">
-              Mis Pedidos
+              <i class="fas fa-receipt me-1"></i> Mis Pedidos
             </router-link>
           </li>
         </ul>
-        <form class="d-flex">
-          <router-link v-if="!authStore.user" :to="{ name: 'register' }" class="btn btn-outline-success m-1">Registrarse</router-link>
-          <router-link v-if="!authStore.user" :to="{ name: 'login' }" class="btn btn-outline-success m-1">Iniciar Sesión</router-link>
-          <button v-if="authStore.user" type="button" class="btn btn-outline-success m-1">
-            <span class="text-white">{{ authStore.user.full_name }}</span>
-            <v-icon name="co-account-logout" inverse="true" scale="1.3" fill="red" @click="authStore.logout()" />
+        <form class="d-flex ms-auto">
+          <router-link v-if="!authStore.user" :to="{ name: 'register' }" class="btn btn-outline-success m-1">
+            <i class="fas fa-user-plus me-1"></i> Registrarse
+          </router-link>
+          <router-link v-if="!authStore.user" :to="{ name: 'login' }" class="btn btn-outline-success m-1">
+            <i class="fas fa-sign-in-alt me-1"></i> Iniciar Sesión
+          </router-link>
+          <button v-if="authStore.user" type="button" class="btn btn-outline-success m-1" @click="authStore.logout()">
+            <i class="fas fa-user me-2"></i> {{ authStore.user.full_name }}
+            <i class="fas fa-sign-out-alt ms-1"></i>
           </button>
         </form>
       </div>
@@ -70,6 +74,8 @@ const authStore = useAuthStore()
 
 .nav-link {
   color: #fff;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-toggler {
@@ -79,6 +85,8 @@ const authStore = useAuthStore()
 .btn-outline-success {
   color: whitesmoke;
   border-color: #ffffff;
+  display: flex;
+  align-items: center;
 }
 
 .btn-outline-success:hover {
@@ -97,6 +105,14 @@ const authStore = useAuthStore()
     animation: tilt-n-move-shaking 0.25s infinite;
 }
 
+.me-2 {
+  margin-right: 0.5rem;
+}
+
+.ms-2 {
+  margin-left: 0.5rem;
+}
+
 @keyframes tilt-n-move-shaking {
     0% { transform: translate(0, 0) rotate(0deg); }
     25% { transform: translate(5px, 5px) rotate(5deg); }
@@ -104,6 +120,4 @@ const authStore = useAuthStore()
     75% { transform: translate(-5px, 5px) rotate(-5deg); }
     100% { transform: translate(0, 0) rotate(0deg); }
 }
-
-
 </style>
