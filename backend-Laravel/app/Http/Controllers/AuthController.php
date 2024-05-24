@@ -35,18 +35,19 @@ class AuthController extends Controller
             'address' => $request->address,
             'password' => Hash::make($request->password)
         ]);
-
-        // Enviar correo de bienvenida
-        Mail::to($user->email)->send(new WelcomeMail($user->full_name, '¡Bienvenido a nuestra tienda!'));
-
-        Auth::login($user);
-
+        
         // Devolver la respuesta JSON
         return response()->json([
             'status' => true,
             'message' => 'Usuario creado satisfactoriamente',
             'token' => $user->createToken('API TOKEN')->plainTextToken
         ], 200);
+
+        // Enviar correo de bienvenida
+        Mail::to($user->email)->send(new WelcomeMail($user->full_name, '¡Bienvenido a nuestra tienda!'));
+
+        Auth::login($user);
+
     }
 
     public function login(Request $request)

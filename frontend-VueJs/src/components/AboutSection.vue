@@ -3,35 +3,17 @@
     <div id="local">
       <div class="divider"></div>
       <div class="local-contents">
-        <div class="wrapper">
-          <div class="highlight-text">
-            <p class="promo">
-              <i class="fas fa-gift"></i> ¡Envío gratis en pedidos superiores a $30.000!
-            </p>
-            <a href="products" class="btn btn-primary">Ver productos</a>
-          </div>
-        </div>
-        <div class="wrapper">
-          <div class="highlight-text">
-            <p class="promo">
-              <i class="fas fa-star"></i> ¡Promociones exclusivas solo por hoy!
-            </p>
-            <a href="promotions" class="btn btn-primary">Ver promociones</a>
-          </div>
-        </div>
-        <div class="wrapper">
-          <div class="highlight-text">
-            <p class="promo">
-              <i class="fas fa-tags"></i> ¡Descubre nuestras rebajas de temporada!
-            </p>
-            <a href="sales" class="btn btn-primary">Ver descuentos</a>
-          </div>
+        <div class="highlight-text" v-for="(content, index) in contents" :key="index">
+          <p class="promo">
+            <i :class="['fas', content.icon, 'fa-icon']"></i> {{ content.text }}
+          </p>
+          <a :href="content.link" class="btn btn-primary">{{ content.buttonText }}</a>
         </div>
       </div>
     </div>
     <div class="banner-container">
-  <img src="..\assets\img\bannerMsi.jpg" alt="Banner">
-</div>
+      <img src="../assets/img/bannerMsi.jpg" alt="Banner">
+    </div>
   </section>
 </template>
 
@@ -42,7 +24,7 @@ const authStore = useAuthStore()
 const contents = [
   {
     icon: 'fa-gift',
-    text: '¡Envío gratis en pedidos superiores a $30.000!',
+    text: '¡Envío gratis a partir de pedidos +$80.000!',
     link: 'products',
     buttonText: 'Ver productos'
   },
@@ -54,13 +36,11 @@ const contents = [
   },
   {
     icon: 'fa-tags',
-    text: '¡Descubre nuestras rebajas de temporada!',
+    text: '¡Mira nuestros descuentos de temporada!',
     link: 'sales',
     buttonText: 'Ver descuentos'
   }
 ]
-
-
 </script>
 
 <style scoped>
@@ -71,51 +51,29 @@ const contents = [
 #local {
   padding-bottom: 30px;
   padding-top: 30px;
-  padding-left: 30px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color:whitesmoke;
+  background-color: whitesmoke;
 }
 
 .local-contents {
-  flex: 1;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.local-content {
-  flex: 1;
-  margin: 0 10px; 
-}
-
-.wrapper {
-  width: 100%; 
-  padding-top: 70px;
-}
-
-.title {
-  color: #333; 
-  font-size: 24px; 
-  letter-spacing: 1px;
-  margin-bottom: 10px; 
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .highlight-text {
+  flex-basis: calc(33.33% - 20px); /* Ajustar el ancho de cada elemento */
+  margin: 10px; /* Espacio entre los elementos */
+  min-height: 100px; /* Alto mínimo para todos los elementos */
+  display: flex; /* Alineación vertical */
+  flex-direction: column; /* Alineación vertical */
+  justify-content: space-between; /* Alinear elementos de manera uniforme */
   background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-
-}
-
-.highlight-text h1 {
-  font-size: 2rem;
-  color: #000000;
-  text-transform: uppercase;
-  margin-bottom: 20px;
 }
 
 .highlight-text .promo {
@@ -137,26 +95,24 @@ const contents = [
   background-color: #18c7c7;
 }
 
-.text-body {
-  text-align: center;
-  font-size: 1.1rem;
-  margin-top: 30px;
+.fa-icon {
+  font-size: 2rem; /* Tamaño de los íconos */
+  color: #0d9e97; /* Color de los íconos */
+  margin-bottom: 10px; /* Espacio entre el icono y el texto */
 }
+
 .banner-container {
-  width: 100%; 
-  max-width: 80%; 
+  width: 100%;
+  max-width: 80%;
   overflow: hidden;
   position: relative;
-  margin-top: 10px; 
-  margin-left: auto; 
-  margin-right: auto; 
+  margin: 10px auto; /* Centrar el contenedor */
 }
 
 .banner-container img {
-  width: 100%; 
-  height: auto; 
-  border-radius: 10px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 </style>

@@ -1,25 +1,21 @@
 <template>
   <section>
-   
-    <div class="container mt-5">
+    <div class="container mt-7">
       <div class="row justify-content-center">
         <div class="col-12 text-center">
           <h3>Algunos de nuestros socios:</h3>
           <div class="logo-container">
             <img src="../assets/img/unne.png" alt="Socio 1" class="logo img-fluid">
-            <img src="../assets/img/telco.jpg" alt="Socio 2" class="logo img-fluid">
             <img src="../assets/img/Logo.png" alt="Socio 3" class="logo img-fluid">
-            <img src="../assets/img/logoCambiarWee.png" alt="Socio 4" class="logo img-fluid">
-            <img src="../assets/img/corrienteslogo.jpg" alt="Socio 5" class="logo img-fluid">
             <img src="../assets/img/polo-it.jpg" alt="Socio 6" class="logo img-fluid">
-            <img src="../assets/img/devligth.png" alt="Socio 7" class="logo img-fluid">
+            <img src="../assets/img/corrienteslogo.jpg" alt="Socio 5" class="logo img-fluid">
+            <img src="../assets/img/telco.jpg" alt="Socio 2" class="logo img-fluid">
           </div>
         </div>
       </div>
     </div>
     <div class="spacer"></div>
-    <footer>
-    </footer>
+    <footer></footer>
   </section>
 </template>
 
@@ -54,12 +50,15 @@ const authStore = useAuthStore()
   max-width: 100px;
   max-height: 75px;
   margin: 5px;
+  object-fit: contain; /* Ajustar las imágenes para que se contengan dentro de las dimensiones especificadas */
+  display: block;
 }
 
 .logo-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   margin-bottom: 20px; /* Aumentar el espacio entre los logos */
 }
 </style>

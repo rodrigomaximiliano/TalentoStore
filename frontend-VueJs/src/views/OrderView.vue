@@ -8,7 +8,7 @@
           <table class="table table-bordered table-hover custom-table">
             <thead>
               <tr>
-                <th>#</th>
+                <th></th>
                 <th>Nombre del producto</th>
                 <th>Cantidad</th>
                 <th>Precio</th>

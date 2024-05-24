@@ -8,7 +8,7 @@
           <table class="table table-bordered table-hover custom-table">
             <thead>
               <tr>
-                <th>#</th>
+                <th></th>
                 <th>Nombre del producto</th>
                 <th>Cantidad</th>
                 <th>Precio</th>
@@ -33,9 +33,14 @@
           </table>
           <!-- Total del carrito -->
           <h2 class="text-center total-price">Total: ${{ totalprice }}</h2>
-          <button type="button" class="btn btn-primary btn-pay" @click="cashOrder">
-            <i class="fas fa-money-bill"></i> Pagar
-          </button>
+          <div class="text-center">
+            <button type="button" class="btn btn-primary btn-pay" @click="cashOrder">
+              <i class="fas fa-money-bill"></i> Pagar
+            </button>
+            <button type="button" class="btn btn-secondary btn-continue-shopping" @click="continueShopping">
+              Continuar comprando
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -84,6 +89,10 @@ const getCarts = async () => {
 const deleteCart = (id, name) => {
   confirmation(name, 'http://localhost:8000/api/remove_cart/' + id, '/cart')
 }
+
+const continueShopping = () => {
+  router.push('/products');
+}
 </script>
 
 <style scoped>
@@ -120,4 +129,7 @@ const deleteCart = (id, name) => {
   font-weight: bold;
 }
 
+.btn-continue-shopping {
+  margin-top: 20px;
+}
 </style>
