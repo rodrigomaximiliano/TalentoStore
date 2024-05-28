@@ -5,33 +5,21 @@
   <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="3000">
-        <img src="../assets/img/example.png" class="d-block w-100" alt="slide1" style="height: 400px;">
-        <div class="carousel-caption d-none d-md-block text-success">
+        <img src="../assets/img/asus.jpg" class="d-block w-100" alt="slide1" style="height: 400px;">
+        <div class="carousel-caption d-none d-md-block">
           <!-- Contenido opcional para la diapositiva 1 -->
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="3000">
-        <img src="../assets/img/slide3.jpg" class="d-block w-100" alt="slide3" style="height: 400px;">
+        <img src="../assets/img/example2.jpg" class="d-block w-100" alt="slide2" style="height: 400px;">
         <div class="carousel-caption d-none d-md-block">
           <!-- Contenido opcional para la diapositiva 2 -->
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="3000">
-        <img src="../assets/img/asus.jpg" class="d-block w-100" alt="slide3" style="height: 400px;">
-        <div class="carousel-caption d-none d-md-block">
-          <!-- Contenido opcional para la diapositiva 3 -->
-        </div>
-      </div>
-      <div class="carousel-item" data-bs-interval="3000">
-        <img src="../assets/img/example2.jpg" class="d-block w-100" alt="slide3" style="height: 400px;">
-        <div class="carousel-caption d-none d-md-block">
-          <!-- Contenido opcional para la diapositiva 4 -->
-        </div>
-      </div>
-      <div class="carousel-item" data-bs-interval="3000">
         <img src="../assets/img/example3.png" class="d-block w-100" alt="slide3" style="height: 400px;">
         <div class="carousel-caption d-none d-md-block">
-          <!-- Contenido opcional para la diapositiva 5 -->
+          <!-- Contenido opcional para la diapositiva 3 -->
         </div>
       </div>
     </div>
@@ -48,4 +36,11 @@
 
 <style scoped>
 /* Estilos opcionales para el carrusel */
+.carousel-item img {
+  height: 400px;
+  
+}
+
+
+
 </style>

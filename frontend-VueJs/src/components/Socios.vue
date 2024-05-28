@@ -6,10 +6,10 @@
           <h3>Algunos de nuestros socios:</h3>
           <div class="logo-container">
             <img src="../assets/img/unne.png" alt="Socio 1" class="logo img-fluid">
-            <img src="../assets/img/Logo.png" alt="Socio 3" class="logo img-fluid">
-            <img src="../assets/img/polo-it.jpg" alt="Socio 6" class="logo img-fluid">
-            <img src="../assets/img/corrienteslogo.jpg" alt="Socio 5" class="logo img-fluid">
             <img src="../assets/img/telco.jpg" alt="Socio 2" class="logo img-fluid">
+            <img src="../assets/img/corrienteslogo.jpg" alt="Socio 5" class="logo img-fluid">
+            <img src="../assets/img/polo-it.jpg" alt="Socio 3" class="logo img-fluid">
+            <img src="../assets/img/Logo.png" alt="Socio 3" class="logo img-fluid">
           </div>
         </div>
       </div>
@@ -47,11 +47,11 @@ const authStore = useAuthStore()
 }
 
 .logo {
-  max-width: 100px;
-  max-height: 75px;
+  max-width: 150px; /* Ajustar el tamaño máximo de los logos */
+  max-height: 100px;
   margin: 5px;
-  object-fit: contain; /* Ajustar las imágenes para que se contengan dentro de las dimensiones especificadas */
   display: block;
+  object-fit: contain; /* Asegura que los logos se ajusten al contenedor */
 }
 
 .logo-container {

@@ -38,7 +38,13 @@
             </router-link>
           </li>
         </ul>
-        <form class="d-flex ms-auto">
+        <form class="search-form d-flex ms-auto">
+          <input class="form-control" type="search" placeholder="Buscar productos" aria-label="Search">
+          <button class="btn btn-search" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+        <div class="d-flex ms-3">
           <router-link v-if="!authStore.user" :to="{ name: 'register' }" class="btn btn-outline-success m-1">
             <i class="fas fa-user-plus me-1"></i> Registrarse
           </router-link>
@@ -49,7 +55,7 @@
             <i class="fas fa-user me-2"></i> {{ authStore.user.full_name }}
             <i class="fas fa-sign-out-alt ms-1"></i>
           </button>
-        </form>
+        </div>
       </div>
     </div>
   </nav>
@@ -61,25 +67,29 @@ const authStore = useAuthStore()
 </script>
 
 <style scoped>
-.navbar-brand h2,
+.navbar-brand .logo {
+  max-width: 70px;
+  max-height: 70px;
+  margin-left: 20px;
+  transition: transform 0.25s;
+}
+
+.navbar-brand .logo:hover {
+  animation: tilt-n-move-shaking 0.25s infinite;
+}
+
 .nav-link,
 .btn-outline-success {
-  text-shadow: 0 0 10px rgba(86, 243, 248, 0.5); 
-  transition: text-shadow 0.3s ease; 
-}
-
-.talento-title {
   color: #fff;
+  text-shadow: 0 0 10px rgba(86, 243, 248, 0.5);
+  transition: text-shadow 0.3s ease;
 }
 
-.nav-link {
+.nav-link:hover,
+.btn-outline-success:hover {
   color: #fff;
-  display: flex;
-  align-items: center;
-}
-
-.navbar-toggler {
-  border-color: #fff;
+  background-color: #18c0cc;
+  border-color: #fcfcfc;
 }
 
 .btn-outline-success {
@@ -87,22 +97,6 @@ const authStore = useAuthStore()
   border-color: #ffffff;
   display: flex;
   align-items: center;
-}
-
-.btn-outline-success:hover {
-  color: #fff;
-  background-color: #18c0cc;
-  border-color: #fcfcfc;
-}
-
-.logo {
-  max-width: 70px;
-  max-height: 70px; 
-  margin-left: 20px; 
-}
-
-.logo:hover {
-    animation: tilt-n-move-shaking 0.25s infinite;
 }
 
 .me-2 {
@@ -113,11 +107,32 @@ const authStore = useAuthStore()
   margin-left: 0.5rem;
 }
 
+.search-form {
+  position: relative;
+  width: 300px;
+}
+
+.search-form .form-control {
+  width: 100%;
+  border-radius: 20px 0 0 20px;
+  border-right: 0;
+}
+
+.search-form .btn-search {
+  border-radius: 0 20px 20px 0;
+  border-left: 0;
+  background-color: #152020;
+  color: #fff;
+}
+
+.search-form .btn-search:hover {
+  background-color: #282f30;
+}
+
 @keyframes tilt-n-move-shaking {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    25% { transform: translate(5px, 5px) rotate(5deg); }
-    50% { transform: translate(0, 0) rotate(0deg); }
-    75% { transform: translate(-5px, 5px) rotate(-5deg); }
-    100% { transform: translate(0, 0) rotate(0deg); }
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(5px, 5px) rotate(5deg); }
+  50% { transform: translate(0, 0) rotate(0deg); }
+  75% { transform: translate(-5px, 5px) rotate(-5deg); }
 }
 </style>

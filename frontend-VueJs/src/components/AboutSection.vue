@@ -4,6 +4,7 @@
       <div class="divider"></div>
       <div class="local-contents">
         <div class="highlight-text" v-for="(content, index) in contents" :key="index">
+          <div class="card-image" :style="{ backgroundImage: 'url(' + content.image + ')' }"></div>
           <p class="promo">
             <i :class="['fas', content.icon, 'fa-icon']"></i> {{ content.text }}
           </p>
@@ -20,27 +21,34 @@
 <script setup>
 import { useAuthStore } from '../stores/auth'
 const authStore = useAuthStore()
+import placaImg from '@/assets/img/placa.jpg';
+import ryzen5Img from '@/assets/img/ryzen5.jpg';
+import mouse1Img from '@/assets/img/mouse1.jpg';
 
 const contents = [
   {
-    icon: 'fa-gift',
+   
     text: '¡Envío gratis a partir de pedidos +$80.000!',
     link: 'products',
-    buttonText: 'Ver productos'
+    buttonText: 'Ver productos',
+    image: placaImg
   },
   {
-    icon: 'fa-star',
+    
     text: '¡Promociones exclusivas solo por hoy!',
     link: 'promotions',
-    buttonText: 'Ver promociones'
+    buttonText: 'Ver promociones',
+    image: mouse1Img
   },
   {
-    icon: 'fa-tags',
+    
     text: '¡Mira nuestros descuentos de temporada!',
     link: 'sales',
-    buttonText: 'Ver descuentos'
+    buttonText: 'Ver descuentos',
+    image: ryzen5Img
   }
 ]
+
 </script>
 
 <style scoped>
@@ -76,6 +84,15 @@ const contents = [
   text-align: center;
 }
 
+.card-image {
+  width: 100%;
+  height: 200px; /* Altura deseada de la imagen */
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
 .highlight-text .promo {
   font-size: 1.2rem;
   color: #020505;
@@ -95,11 +112,7 @@ const contents = [
   background-color: #18c7c7;
 }
 
-.fa-icon {
-  font-size: 2rem; /* Tamaño de los íconos */
-  color: #0d9e97; /* Color de los íconos */
-  margin-bottom: 10px; /* Espacio entre el icono y el texto */
-}
+
 
 .banner-container {
   width: 100%;
@@ -107,6 +120,11 @@ const contents = [
   overflow: hidden;
   position: relative;
   margin: 10px auto; /* Centrar el contenedor */
+}
+.fa-icon {
+  
+  color: #0d9e97; /* Color de los íconos */
+  
 }
 
 .banner-container img {

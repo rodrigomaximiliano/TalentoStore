@@ -14,9 +14,9 @@
       <div class="footer-section footer-center">
         <h3 class="footer-heading">¡Síguenos en nuestras redes sociales!</h3>
         <div class="social-icons">
-          <a href="#" class="social-icon"><v-icon name="bi-facebook" scale="1.5" /></a>
-          <a href="#" class="social-icon"><v-icon name="bi-instagram" scale="1.5" /></a>
-          <a href="#" class="social-icon"><v-icon name="co-twitter" scale="1.5" /></a>
+          <a href="#" class="social-icon"><v-icon name="bi-facebook" scale="1.5" style="color: #3b5998;" /></a>
+          <a href="#" class="social-icon"><v-icon name="bi-instagram" scale="1.5" style="color: #c13584;" /></a>
+          <a href="#" class="social-icon"><v-icon name="co-twitter" scale="1.5" style="color: #1da1f2;" /></a>
         </div>
       </div>
 
@@ -26,6 +26,7 @@
           <li><span class="footer-text">Email:</span> info@tiendatalento.com</li>
           <li><span class="footer-text">Teléfono:</span> 3794456-7890</li>
           <li><span class="footer-text">Dirección:</span> Corrientes Capital, Argentina</li>
+          <a href="#" class="scroll-to-top"><i class="fas fa-arrow-up" style="color: #2ff5e4;"></i></a>
         </ul>
       </div>
     </div>
@@ -112,5 +113,15 @@
 .footer-bottom {
   margin-top: 10px; 
   font-size: 10px; 
+}
+.scroll-to-top {
+  color: #2ff5e4;
+  text-decoration: none;
+  font-size: 20px;
+  transition: transform 0.3s ease; /* Agregar una transición de transformación */
+}
+
+.scroll-to-top:hover {
+  transform: scale(1.2);
 }
 </style>
