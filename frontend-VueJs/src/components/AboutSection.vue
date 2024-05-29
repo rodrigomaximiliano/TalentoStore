@@ -4,16 +4,17 @@
       <div class="divider"></div>
       <div class="local-contents">
         <div class="highlight-text" v-for="(content, index) in contents" :key="index">
-          <div class="card-image" :style="{ backgroundImage: 'url(' + content.image + ')' }"></div>
-          <p class="promo">
-            <i :class="['fas', content.icon, 'fa-icon']"></i> {{ content.text }}
-          </p>
+          <div class="card-image-container">
+            <div class="card-image" :style="{ backgroundImage: 'url(' + content.image + ')' }"></div>
+            <img v-if="content.brandImage" :src="content.brandImage" alt="Brand Logo" class="brand-image">
+          </div>
+          <p class="promo">{{ content.text }}</p>
           <a :href="content.link" class="btn btn-primary">{{ content.buttonText }}</a>
         </div>
       </div>
     </div>
     <div class="banner-container">
-      <img src="../assets/img/bannerMsi.jpg" alt="Banner">
+      <img src="../assets/img/landing_home.webp" alt="Banner">
     </div>
   </section>
 </template>
@@ -24,31 +25,33 @@ const authStore = useAuthStore()
 import placaImg from '@/assets/img/placa.jpg';
 import ryzen5Img from '@/assets/img/ryzen5.jpg';
 import mouse1Img from '@/assets/img/mouse1.jpg';
+import brandLogoGefor from '@/assets/img/gefor.png';
+import brandLogoMob from '@/assets/img/mob.png';
+import brandLogoMobAmd from '@/assets/img/mobamd.png'; // Importa tus imágenes de marca
 
 const contents = [
   {
-   
-    text: '¡Envío gratis a partir de pedidos +$80.000!',
+    text: '¡Envío gratis en compras mayores a $80.000!',
     link: 'products',
     buttonText: 'Ver productos',
-    image: placaImg
+    image: placaImg,
+    brandImage: brandLogoGefor // Agrega la imagen de la marca aquí
   },
   {
-    
     text: '¡Promociones exclusivas solo por hoy!',
     link: 'promotions',
     buttonText: 'Ver promociones',
-    image: mouse1Img
+    image: mouse1Img,
+    brandImage: brandLogoMob
   },
   {
-    
     text: '¡Mira nuestros descuentos de temporada!',
     link: 'sales',
     buttonText: 'Ver descuentos',
-    image: ryzen5Img
+    image: ryzen5Img,
+    brandImage: brandLogoMobAmd
   }
 ]
-
 </script>
 
 <style scoped>
@@ -71,12 +74,12 @@ const contents = [
 }
 
 .highlight-text {
-  flex-basis: calc(33.33% - 20px); /* Ajustar el ancho de cada elemento */
-  margin: 10px; /* Espacio entre los elementos */
-  min-height: 100px; /* Alto mínimo para todos los elementos */
+  flex-basis: calc(33.33% - 20px); 
+  margin: 10px; 
+  min-height: 100px; 
   display: flex; /* Alineación vertical */
   flex-direction: column; /* Alineación vertical */
-  justify-content: space-between; /* Alinear elementos de manera uniforme */
+  justify-content: space-between; 
   background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 10px;
@@ -84,13 +87,27 @@ const contents = [
   text-align: center;
 }
 
+.card-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px; 
+}
+
 .card-image {
   width: 100%;
-  height: 200px; /* Altura deseada de la imagen */
+  height: 100%;
   background-size: cover;
   background-position: center;
   border-radius: 10px;
-  margin-bottom: 10px;
+}
+
+.brand-image {
+  position: absolute;
+  bottom: 10px; 
+  right: 10px; 
+  width: 100px; 
+  height: auto;
+  z-index: 1;
 }
 
 .highlight-text .promo {
@@ -100,8 +117,8 @@ const contents = [
 }
 
 .highlight-text .btn {
-  background-color: #333;
-  color: #fff;
+  background-color: #ffffff;
+  color: #050505;
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
@@ -109,22 +126,15 @@ const contents = [
 }
 
 .highlight-text .btn:hover {
-  background-color: #18c7c7;
+  background-color: #96f0f0;
 }
-
-
 
 .banner-container {
   width: 100%;
   max-width: 80%;
   overflow: hidden;
   position: relative;
-  margin: 10px auto; /* Centrar el contenedor */
-}
-.fa-icon {
-  
-  color: #0d9e97; /* Color de los íconos */
-  
+  margin: 10px auto; 
 }
 
 .banner-container img {

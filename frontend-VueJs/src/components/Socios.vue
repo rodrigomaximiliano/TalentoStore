@@ -3,13 +3,13 @@
     <div class="container mt-7">
       <div class="row justify-content-center">
         <div class="col-12 text-center">
-          <h3>Algunos de nuestros socios:</h3>
+          <h3 class="section-title">¡Descubre nuestros increíbles socios!</h3>
           <div class="logo-container">
-            <img src="../assets/img/unne.png" alt="Socio 1" class="logo img-fluid">
-            <img src="../assets/img/telco.jpg" alt="Socio 2" class="logo img-fluid">
-            <img src="../assets/img/corrienteslogo.jpg" alt="Socio 5" class="logo img-fluid">
-            <img src="../assets/img/polo-it.jpg" alt="Socio 3" class="logo img-fluid">
-            <img src="../assets/img/Logo.png" alt="Socio 3" class="logo img-fluid">
+            <img src="../assets/img/unne.png" alt="Socio 1" class="logo">
+            <img src="../assets/img/telco.jpg" alt="Socio 2" class="logo">
+            <img src="../assets/img/cteslogo.jpg" alt="Socio 5" class="logo">
+            <img src="../assets/img/polo-it.jpg" alt="Socio 3" class="logo">
+            <img src="../assets/img/Logo.png" alt="Socio 3" class="logo">
           </div>
         </div>
       </div>
@@ -25,40 +25,27 @@ const authStore = useAuthStore()
 </script>
 
 <style scoped>
-.contact-section {
-  background: #f0f0f0;
-  padding-bottom: 5px;
-}
-
-.form-control {
-  padding: 8px 12px; /* Ajustar el espacio dentro de los campos de entrada */
-}
-
-.contact-text {
-  margin-bottom: 20px; /* Aumentar el espacio entre los elementos de texto */
-}
-
-.bg-custom-green {
-  background-color: #213a3a;
-}
-
-.bg-custom-green:hover {
-  background-color: #0f86a3;
-}
-
-.logo {
-  max-width: 150px; /* Ajustar el tamaño máximo de los logos */
-  max-height: 100px;
-  margin: 5px;
-  display: block;
-  object-fit: contain; /* Asegura que los logos se ajusten al contenedor */
+.section-title {
+  font-family: 'Fantasy', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #213a3a;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .logo-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 20px; /* Aumentar el espacio entre los logos */
+  margin-top: 20px;
+}
+
+.logo {
+  max-width: 150px;
+  max-height: 100px;
+  margin: 10px;
+  object-fit: contain;
 }
 </style>

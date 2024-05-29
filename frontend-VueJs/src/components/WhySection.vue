@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="w-50 mx-auto text-center pt-5">
-      <h2>¿Por qué comprar con nosotros?</h2>
+      <h2 class="section-title">¿Por qué comprar con nosotros?</h2>
     </div>
     <div class="row mx-3 text-center pt-2 pb-5 align-items-center">
       <div class="col-md-4">
@@ -38,3 +38,22 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import { useAuthStore } from '../stores/auth'
+const authStore = useAuthStore()
+</script>
+
+<style scoped>
+.section-title {
+  font-family: 'Fantasy', sans-serif;
+  font-size: 2rem; /* Tamaño de fuente similar al del h3 */
+  font-weight: 600;
+  color: #213a3a;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+</style>
