@@ -2,7 +2,15 @@
 
 TalentoStore es una aplicación de una tienda web de insumos de computación, desarrollada como proyecto final del curso de Talentos Digitales.
 
-![Captura de pantalla 2024-05-21 172048](https://github.com/rodrigomaximiliano/TalentoStore/assets/116413011/ad262cf6-865c-4740-bfdd-c46c70c5aeae)
+![Captura de pantalla 2024-06-06 182034](https://github.com/rodrigomaximiliano/TalentoStore/assets/116413011/f8fdc36b-e513-4ea9-a4a3-9b60376217ed)
+
+
+
+![Captura de pantalla 2024-06-06 182144](https://github.com/rodrigomaximiliano/TalentoStore/assets/116413011/81659fae-b864-4e72-9b15-1354a2b1830d)
+
+![Captura de pantalla 2024-06-06 182228](https://github.com/rodrigomaximiliano/TalentoStore/assets/116413011/ca794739-7be8-4ae2-ba91-208118e7aa98)
+
+![Captura de pantalla 2024-06-06 182653](https://github.com/rodrigomaximiliano/TalentoStore/assets/116413011/f9d9547d-3cb7-4445-838c-cb06b1bedc32)
 
 
 La aplicación permite a los usuarios registrarse, iniciar sesión, ver los productos disponibles, añadir productos al carrito de compras, proceder al pago utilizando una pasarela de pago de testeo y ver los pedidos realizados. Además, la aplicación envía un correo electrónico de bienvenida cuando un nuevo usuario se registra y también cuando se realiza una compra con éxito.
