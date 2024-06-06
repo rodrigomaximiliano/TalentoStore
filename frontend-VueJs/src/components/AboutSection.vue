@@ -126,7 +126,7 @@ const contents = [
 }
 
 .highlight-text .btn:hover {
-  background-color: #96f0f0;
+  background-color: #499797;
 }
 
 .banner-container {

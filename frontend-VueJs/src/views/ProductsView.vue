@@ -21,11 +21,11 @@ const getProducts = async () => {
     .get('http://localhost:8000/api/products')
     .then((response) => {
       products.value = response.data;
-      console.log('Products from API:', response.data); // Log products from API response
+      console.log('Products from API:', response.data);
     });
 };
 
-const obtainId = async (id) => {
+const obtainId = (id) => {
   productId.value = id;
 };
 
@@ -33,49 +33,39 @@ const addCart = async (event) => {
   event.preventDefault();
   sendRequest('POST', form.value, 'http://localhost:8000/api/add_cart/' + productId.value);
 };
-
-const getImageUrl = (productName, imageUrl) => {
-  if (imageUrl) {
-    return imageUrl;
-  } else {
-    switch (productName) {
-      case 'Xiaomi':
-        return '../../public/imagen/xiaomi.jpeg';
-      case 'Samsung Galaxy S20':
-        return '../../public/imagen/samsung.jpg';
-      case 'Iphone 13':
-        return '../../public/imagen/iphone13.jpg';
-      default:
-        return '';
-    }
-  }
-};
 </script>
 
 <template>
   <div>
     <NavBar />
-    <div class="row justify-content-md-center p-4">
-      <div
-        class="card p-6"
-        style="width: 18rem; margin: 10px"
-        v-for="product in products"
-        :key="product.id"
-      >
-        <img :src="getImageUrl(product.name)" class="card-img-top" />
-        <div class="card-body">
-          <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text">{{ product.description }}</p>
-          <button
-            @click="obtainId(product.id)"
-            type="button"
-            class="btn btn-primary"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >
-            Añadir al carrito
-          </button>
-          <span class="h6" style="padding-left: 50px">${{ product.price }}</span>
+
+    <div class="container">
+      <div class="row justify-content-md-center p-4">
+        <div
+          class="card p-6 shadow-sm"
+          style="width: 18rem; margin: 10px; border-radius: 15px; transition: transform 0.2s"
+          v-for="product in products"
+          :key="product.id"
+          @mouseover="hoverEffect($event, true)"
+          @mouseout="hoverEffect($event, false)"
+        >
+          <img :src="`http://localhost:8000/${product.image}`" class="card-img-top" alt="Product Image" style="border-top-left-radius: 15px; border-top-right-radius: 15px"/>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text" style="flex-grow: 1">{{ product.description }}</p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <button
+                @click="obtainId(product.id)"
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                Añadir al carrito
+              </button>
+              <span class="h6">${{ product.price }}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -116,3 +106,13 @@ const getImageUrl = (productName, imageUrl) => {
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    hoverEffect(event, hover) {
+      event.currentTarget.style.transform = hover ? 'scale(1.05)' : 'scale(1)';
+    }
+  }
+}
+</script>
