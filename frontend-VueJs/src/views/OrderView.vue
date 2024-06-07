@@ -26,7 +26,8 @@
                 <td>${{ order.price }}</td>
                 <td>{{ order.payment_status }}</td>
                 <td>{{ order.delivery_status }}</td>
-                <td><img :src="order.image" alt="Imagen del producto" class="product-image"></td>
+                <!-- Asegúrate de que la ruta de la imagen sea correcta -->
+                <td><img :src="getImageUrl(order.image)" alt="Imagen del producto" class="product-image"></td>
                 <td>
                   <button
                     v-if="(order.delivery_status == 'Pedido cancelado')"
@@ -76,6 +77,10 @@ const getOrders = async () => {
 
 const cancelOrder = (id, name) => {
   confirmationGet(name, 'http://localhost:8000/api/cancel_order/' + id, '/order')
+}
+
+const getImageUrl = (image) => {
+  return `http://localhost:8000/${image}`; // Ruta completa de la imagen
 }
 </script>
 
