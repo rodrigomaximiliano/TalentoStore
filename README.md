@@ -1,6 +1,6 @@
 # TalentoStore
 
-TalentoStore es una aplicación de una tienda web de insumos de computación, desarrollada como proyecto final del curso de Talentos Digitales.
+TalentoStore es una aplicación de una tienda web de insumos de computación, desarrollada como proyecto final de la capacitación y certificación en programación brindada por la UNNE/Telco/PoloIT.
 
 ![Captura de pantalla 2024-06-06 182034](https://github.com/rodrigomaximiliano/TalentoStore/assets/116413011/f8fdc36b-e513-4ea9-a4a3-9b60376217ed)
 
